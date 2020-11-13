@@ -141,11 +141,25 @@ body {
   border: 3px solid #ffffff00;
 }
 
+
+.bookmark-title-container {
+  display: flex;
+  justify-content: space-between;
+}
 .bookmark-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--fg);
   margin: 0em 0em 0.35em 0em;
+}
+.bookmark-title-container:hover > .bookmark-open-all {    /*https://www.w3schools.com/howto/howto_css_display_element_hover.asp*/
+  width: 16px;
+  height: 16px;
+  filter: invert(75%);
+  display: block;
+}
+.bookmark-title-container:hover > .bookmark-open-all:hover {
+  filter: invert(95%);
 }
 .bookmark {
   text-decoration: none;

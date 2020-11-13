@@ -82,8 +82,10 @@
       bookmarkContainer.innerHTML = bookmarks    // bookmarks are written to the page
         .map((b) => {
           const html = ["<div class='bookmark-set'>"];
-          html.push(`<div class="bookmark-title">${b.title}</div>`);
-          html.push(`<div class="bookmark-open-all">📩</div>`);
+          html.push(`<div class="bookmark-title-container">`);
+            html.push(`<div class="bookmark-title">${b.title}</div>`);
+            html.push(`<a class="bookmark-open-all" href="test"><img src="external-link-line.svg"></img></a>`);
+          html.push(`</div>`);
           html.push('<div class="bookmark-inner-container">');
           html.push(
             ...b.links.map(
