@@ -79,10 +79,11 @@
     // Handle writing out Bookmarks
     function setupBookmarks() {
       const bookmarkContainer = document.getElementById("bookmark-container");
-      bookmarkContainer.innerHTML = bookmarks
+      bookmarkContainer.innerHTML = bookmarks    // bookmarks are written to the page
         .map((b) => {
           const html = ["<div class='bookmark-set'>"];
           html.push(`<div class="bookmark-title">${b.title}</div>`);
+          html.push(`<div class="bookmark-open-all">📩</div>`);
           html.push('<div class="bookmark-inner-container">');
           html.push(
             ...b.links.map(
