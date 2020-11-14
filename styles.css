@@ -7,7 +7,7 @@
   --containerBg: #272727;
   --searchBg: var(--containerBg);
   --scrollbarColor: #3f3f3f;
-  --fontFamily: 'Liberation Sans', 'Roboto Mono', monospace;
+  --fontFamily: 'Ericsson Hilda Light', 'Liberation Sans', 'Calibri', 'Roboto Mono', monospace;
   --bookmarkSetWidth: 20rem;
   --bookmarkSetHeight: 15rem;
   --bookmarkSetMargin: 0.5em;
