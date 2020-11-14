@@ -1,10 +1,27 @@
+const wallpaperPath = '/home/esrmlvn/Pictures/Wallpapers/';
+const wallpaperList = [
+    "0lOe7Ei.png",
+    "2veek29rath51.jpg",
+    "beach_sea_waves_145932_3840x2160.jpg",
+    "DI3Oxg8.jpg",
+    "o6CEpAb.jpg",
+    "PVfXvuI.png",
+    "wallpapersden.com_minimalist-black-digital-blend_2560x1440.jpg"
+];
+
 const searchUrl = "https://google.com/search?q=";
+// const dSearchUrl = "https://duckduckgo.com/?q="
+// const bSearchUrl = "https://www.bing.com/search?q="
+// const nSearchUrl = "https://search.naver.com/search.naver?query="
+// const ySearchUrl = "https://www.youtube.com/results?search_query=""
+
+const bookmarkContainer = document.getElementById("bookmark-container");
 
 // Search on enter key event
 function search(e) {
-    if (e.keyCode == 13) {
+    if (e.key == 'Enter') {
         var val = document.getElementById("search-field").value;
-        window.open(searchUrl + val);
+        window.open(searchUrl + val, "_self");
     }
 }
 
@@ -48,7 +65,6 @@ function getWeather() {
 
 // Handle writing out Bookmarks
 function setupBookmarks() {
-    const bookmarkContainer = document.getElementById("bookmark-container");
     bookmarkContainer.innerHTML = bookmarks    // bookmarks are written to the page
         .map((b) => {
             const html = ["<div class='bookmark-set'>"];
@@ -70,18 +86,8 @@ function setupBookmarks() {
 }
 
 // Set random wallpaper on page load
-const wallpaperPath = '/home/esrmlvn/Pictures/Wallpapers/';
 function setRandomWallpaper() {
-    var images = [
-        "0lOe7Ei.png",
-        "2veek29rath51.jpg",
-        "beach_sea_waves_145932_3840x2160.jpg",
-        "DI3Oxg8.jpg",
-        "o6CEpAb.jpg",
-        "PVfXvuI.png",
-        "wallpapersden.com_minimalist-black-digital-blend_2560x1440.jpg"
-    ]
-    randomWallpaperPath = wallpaperPath + images[Math.floor(Math.random() * images.length)];
+    randomWallpaperPath = wallpaperPath + wallpaperList[Math.floor(Math.random() * wallpaperList.length)];
     console.log(randomWallpaperPath);
     document.getElementById("container").style.backgroundImage = "url('" + randomWallpaperPath + "')";
 }
@@ -99,12 +105,12 @@ window.onload = () => {
 };
 
 document.addEventListener("keyup", (event) => {
-    if (event.keyCode == 32) {
-        // Spacebar code to open search
+    if (event.key == ' ') {
+        // Open search
         document.getElementById("search").style.display = "flex";
         document.getElementById("search-field").focus();
-    } else if (event.keyCode == 27) {
-        // Esc to close search
+    } else if (event.key == 'Escape') {
+        // Close search
         document.getElementById("search-field").value = "";
         document.getElementById("search-field").blur();
         document.getElementById("search").style.display = "none";
