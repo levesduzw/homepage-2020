@@ -29,6 +29,9 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* background-image: url("/home/esrmlvn/Pictures/Wallpapers/2veek29rath51.jpg"); */
+  background-position: center;
+  background-size: cover;
 }
 
 #clock {

@@ -15,7 +15,7 @@
   <div id="search">
     <input id="search-field" type="text" name="search-field" onkeypress="return search(event)" />
   </div>
-  <div class="container">
+  <div id="container" class="container">
     <div id="clock"></div>
     <div class="weather-container">
       <div class="row">
@@ -98,10 +98,26 @@
         })
         .join("");
     }
+    const wallpaperPath = '/home/esrmlvn/Pictures/Wallpapers/';
+    function setRandomWallpaper() {
+      var images = [
+        "0lOe7Ei.png",
+        "2veek29rath51.jpg",
+        "beach_sea_waves_145932_3840x2160.jpg",
+        "DI3Oxg8.jpg",
+        "o6CEpAb.jpg",
+        "PVfXvuI.png",
+        "wallpapersden.com_minimalist-black-digital-blend_2560x1440.jpg];"
+      ]
+      randomWallpaperPath = wallpaperPath + images[Math.floor(Math.random() * images.length)];
+
+      document.getElementById("container").style.backgroundImage = 'url("' + randomWallpaperPath + '")';
+    }
 
     window.onload = () => {
       setupBookmarks();
       getWeather();
+      setRandomWallpaper();
       // Set up the clock
       document.getElementById("clock").innerHTML = getTime();
       // Set clock interval to tick clock
