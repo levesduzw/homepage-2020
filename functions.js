@@ -79,10 +79,11 @@ function setRandomWallpaper() {
         "DI3Oxg8.jpg",
         "o6CEpAb.jpg",
         "PVfXvuI.png",
-        "wallpapersden.com_minimalist-black-digital-blend_2560x1440.jpg];"
+        "wallpapersden.com_minimalist-black-digital-blend_2560x1440.jpg"
     ]
     randomWallpaperPath = wallpaperPath + images[Math.floor(Math.random() * images.length)];
-    document.getElementById("container").style.backgroundImage = 'url("' + randomWallpaperPath + '")';
+    console.log(randomWallpaperPath);
+    document.getElementById("container").style.backgroundImage = "url('" + randomWallpaperPath + "')";
 }
 
 window.onload = () => {
