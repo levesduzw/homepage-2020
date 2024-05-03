@@ -1,3 +1,5 @@
+
+
 const wallpaperPath = '/home/esrmlvn/Pictures/Wallpapers/';
 const wallpaperList = [
     "0lOe7Ei.png",
@@ -21,7 +23,15 @@ const bookmarkContainer = document.getElementById("bookmark-container");
 function search(e) {
     if (e.key == 'Enter') {
         var val = document.getElementById("search-field").value;
-        window.open(searchUrl + val, "_self");
+        // Open multiple tabs from JavaScript
+        // https://gist.github.com/zacharysyoung/d8498aecabd42ffbe3778522fbf4b25a
+        const anchors = document.getElementsByTagName('a');
+        console.log(anchors)
+        for (const x of anchors) {
+            console.log(x);
+            //window.open(x.href, '_blank');    // enable popups + be careful
+        }
+        // window.open(searchUrl + val, "_self");
     }
 }
 
