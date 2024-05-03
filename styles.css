@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 :root {
-  --bg: #5f4b8b;
+  --bg: #7c404c;
   --fg: #ffffff;
   --secondaryFg: #b3b3b3;
   --containerBg: #272727;
   --searchBg: var(--containerBg);
   --scrollbarColor: #3f3f3f;
-  --fontFamily: 'Roboto Mono', monospace;
+  --fontFamily: 'Ericsson Hilda Light', 'Liberation Sans', 'Calibri', 'Roboto Mono', monospace;
+  --bookmarkSetWidth: 20rem;
+  --bookmarkSetHeight: 15rem;
+  --bookmarkSetMargin: 0.5em;
+  --nOfBookmarkSetsPerRow: 4;
+  --getBookmarkContainerWidth: calc(
+     ( var(--bookmarkSetWidth) + var(--bookmarkSetMargin) * 2 ) * var(--nOfBookmarkSetsPerRow)
+    );  
 }
 
 body {
@@ -22,6 +29,9 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  /* background-image: url("/home/esrmlvn/Pictures/Wallpapers/2veek29rath51.jpg"); */
+  background-position: center;
+  background-size: cover;
 }
 
 #clock {
@@ -76,8 +86,9 @@ body {
 #bookmark-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 50%;
+  width: var(--getBookmarkContainerWidth);
   margin: 1em 0em;
 }
 
@@ -104,9 +115,9 @@ body {
   border-radius: 3px;
   font-family: var(--fontFamily);
   font-size: 0.85rem;
-  width: 25%;
-  height: 12em;
-  margin: 0em 0.5em;
+  width: var(--bookmarkSetWidth);
+  height: var(--bookmarkSetHeight);
+  margin: var(--bookmarkSetMargin);
   box-sizing: border-box;
 }
 
@@ -133,11 +144,25 @@ body {
   border: 3px solid #ffffff00;
 }
 
+
+.bookmark-title-container {
+  display: flex;
+  justify-content: space-between;
+}
 .bookmark-title {
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--fg);
   margin: 0em 0em 0.35em 0em;
+}
+.bookmark-title-container:hover > .bookmark-open-all {    /*https://www.w3schools.com/howto/howto_css_display_element_hover.asp*/
+  width: 16px;
+  height: 16px;
+  filter: invert(75%);
+  display: block;
+}
+.bookmark-title-container:hover > .bookmark-open-all:hover {
+  filter: invert(95%);
 }
 .bookmark {
   text-decoration: none;
