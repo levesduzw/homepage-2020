@@ -1,0 +1,164 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');*/
+
+
+/*5f4b8b*/
+
+:root {
+    --bg: #7c404c;
+    --bg2: #841b2d;
+    --bg3: #a3333d;
+    --fg: #ffffff;
+    --secondaryFg: #b3b3b3;
+    /* --containerBg: #272727; */
+    --containerBg: rgba(0, 0, 0, 0.25);    /*transparent*/ 
+    --searchBg: var(--containerBg);
+    --scrollbarColor: rgba(0, 0, 0, 0.0);
+}
+
+body {
+    /*background-color: var(--bg3);*/
+    margin: 0px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-position: center;
+    background-size: cover;
+
+    /*2022*/
+    /* background-image: url("wallpaper2022/2veek29rath51.jpg"); */
+    /* background-image: url("wallpaper2022/calm_lake_by_rmradev_dcb1hcr.jpg"); */
+    /*background-image: url("wallpaper2022/calm_lake_by_rmradev_dcb1hcr.jpg");*/
+    /* background-image: url("wallpaper2022/o6CEpAb.jpg"); */
+    /* background-image: url("wallpaper2022//home/esrmlvn/Pictures/Wallpapers/niivu-abstractpack (47).jpg");*/
+    /* background-image: url("wallpaper2022//home/esrmlvn/Pictures/Wallpapers/niivu-abstractpack (46).jpg"); */
+    /* 2021 august new ones  */
+    /* background-image: url("wallpaper2022/77020446_3013888561955191_8261035947911544832_o.jpg"); */
+    /* background-image: url("wallpaper2022/o7y94zzpduf21.jpg"); */
+    /* background-image: url("wallpaper2022/90358001_10163085732025587_929795677246980096_o.jpg"); */
+    /* background-image: url("wallpaper2022/86175871_10216535553163746_4614949313104052224_o.jpg"); */
+    /* background-image: url("wallpaper2022/84770527_3175431682470316_5023991677568679936_o.jpg");  */
+    /* background-image: url("wallpaper2022/20210810_172022.jpg");  */
+    /* background-image: url("wallpaper2022/cbabe37254b85d5af0eb41.png");  */
+
+    /*2023*/
+    /* background-image: url(var(--wallpaperPath));     "you cannot use var() interpolation with url() due to legacy reasons" */
+
+    /*background-image: url("wallpaper2023/"); /**/
+    /*background-image: url("wallpaper2023/1670648289707358.jpg"); /*hacking 0.8 alpha*/
+    /*background-image: url("wallpaper2023/1668624660502106.jpg"); /*flowers on balcony 0.6 alpha*/
+    /*background-image: url("wallpaper2023/wide/1666461259132314.jpg"); /*Totoro house, 0.7 alpha*/
+    background-image: url("wallpaper2023/1666462232081529.jpg"); /*waves painting*/
+    /*background-image: url("wallpaper2023/1666950678179081.png"); /*pixel blue sky mountains*/
+    /*background-image: url("wallpaper2023/1669779701797626.jpg"); /*kek resin*/
+    /*background-image: url("wallpaper2023/1669922563376175.png"); /*bordo*/
+
+}
+
+#clock {
+    font-family: sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: 'Ericsson Hilda', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: var(--fg);
+    margin-bottom: 0.25em;
+}
+
+.weather-container {
+    width: 30%;
+    background-color: var(--containerBg);
+    padding: 1em;
+    border-radius: 3px;
+    font-family: 'Ericsson Hilda', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: var(--fg);
+    text-align: center;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.bookmark-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 65%;
+    margin: 0.4em 0em;
+}
+
+@media only screen and (max-width: 960px) {
+    .container {
+        height: auto;
+    }
+    #clock {
+        margin-top: 1em;
+    }
+    .container>.bookmark-container {
+        flex-direction: column;
+        width: 60%;
+    }
+    .bookmark-container>.bookmark-set {
+        width: auto;
+        margin: 1em 0em;
+    }
+}
+
+.bookmark-set {
+    padding: 1em;
+    background-color: var(--containerBg);
+    border-radius: 10px;
+    font-family: 'Ericsson Hilda', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 0.85rem;
+    /* font-weight: 300; */
+    width: 25%;
+    height: 17em;
+    margin: 0em 0.5em;
+    box-sizing: border-box;
+}
+
+.bookmark-inner-container {
+    overflow-y: scroll;
+    height: 80%;
+    vertical-align: top;
+    padding-right: 6px;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbarColor) #ffffff00;
+}
+
+.bookmark-inner-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bookmark-inner-container::-webkit-scrollbar-track {
+    background: #ffffff00;
+}
+
+.bookmark-inner-container::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbarColor);
+    border-radius: 6px;
+    border: 3px solid #ffffff00;
+}
+
+.bookmark-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--fg);
+    margin: 0em 0em 0.35em 0em;
+}
+
+.bookmark {
+    text-decoration: none;
+    color: var(--secondaryFg);
+    display: block;
+    margin: 0.5em 0em;; 
+}
+
+.bookmark:hover {
+    color: var(--fg);
+}
